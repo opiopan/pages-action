@@ -1,0 +1,1 @@
+Test for deploying Pages by using actions
