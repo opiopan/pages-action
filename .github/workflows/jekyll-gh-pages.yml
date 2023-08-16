@@ -36,6 +36,8 @@ jobs:
         working-directory: ./docs/
       - name: Buld webpages by jekyll
         run: bundle exec jekyll build
+        env:
+          JEKYLL_GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         working-directory: ./docs/
       - name: Upload artifact
         uses: actions/Upload-Pages-Artifact@v2
