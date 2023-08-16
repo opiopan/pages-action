@@ -1,0 +1,165 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.page-header {
+    @include large {
+        padding: 3rem 4rem;
+    }
+
+    @include medium {
+        padding: 2rem 2rem;
+    }
+
+    @include small {
+        padding: 1.5rem 1rem;
+    }
+}
+
+.storebtn {
+    display: inline-block;
+    margin-left: 1rem;
+
+    img {
+        height: 3.75rem;
+        vertical-align: -1.5rem;
+    }
+
+    @include medium {
+        img{
+            height: 3.05rem;
+            vertical-Align: -1.2rem;
+        }
+    }
+
+    @include small {
+        margin-left: 0rem;
+
+        img {
+            height: 2.6rem;
+            vertical-Align: -0.97rem;
+        }
+    }
+}
+
+.btn {
+    border-radius: 0.5rem;
+
+    @include large {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        margin-bottom: 0;
+
+        img {
+            height: 3.2em;
+            margin-top: -1.15em;
+            margin-bottom: -1.25em;
+            margin-right: 0.2em;
+        }
+    }
+
+    @include medium {
+        padding-top: 0.85em;
+        padding-bottom: 0.85em;
+        margin-bottom: 0;
+
+        img {
+            height: 2.9em;
+            margin-top: -1.35em;
+            margin-bottom: -1.05em;
+            margin-right: 0.2em;
+        }
+    }
+
+    @include small {
+        display: block;
+        width: 13em;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0.6em 0.9em;
+        font-size: 0.9em;
+
+        img {
+            height: 2.3em;
+            margin-top: -1.35em;
+            margin-bottom: -0.785em;
+            margin-right: 0.2em;
+        }
+
+        + .btn{
+            margin-left: auto;
+        }
+    }
+}
+
+.project-tagline {
+    @include medium {
+        margin-top: 0.6em;
+    }
+
+    @include small {
+        margin-top: 0.6em;
+    }
+}
+
+.titlelogo {
+    height: 2em;
+    margin-top: -0.3em;
+    margin-bottom: -0.68em;
+}
+
+.app-store-link{
+    font-size: 7em;
+    margin: 0;
+    margin-bottom: -0.35em;
+    padding: 0;
+
+    img {
+        height: 1em;
+    }
+}
+
+.storebtn-general {
+    display: inline-block;
+    margin-left: 0em;
+
+    img {
+        height: 0.5em;
+        vertical-align:0.25em;
+    }
+
+    @include small {
+        img {
+            height: 0.35em;
+            vertical-Align: 0.31em;
+        }
+    }
+}
+
+.movie {
+    margin-left: auto;
+    margin-right: auto;
+    aspect-ratio: 560/315;
+    width: 560px;
+    max-width: 95%;
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+pre {
+    &:has(> .language-mermaid) {
+        border: 0;
+        background-color: white;
+    }
+}
+
+.language-mermaid {
+    svg{
+        display:block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
