@@ -35,7 +35,7 @@ jobs:
         run: bundle install
         working-directory: ./docs/
       - name: Buld webpages by jekyll
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build -V
         env:
           JEKYLL_GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         working-directory: ./docs/
