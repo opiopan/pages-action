@@ -34,8 +34,8 @@ jobs:
         with:
           source: ./docs/
           destination: ./docs/_site
-      - name: Retreve release information
-        run: curl -L -H "Accept: application/vnd.github+json" -H "Authorization: Bearer $GITHUB_TOKEN" -H "X-GitHub-Api-Version: 2022-11-28" > ./docs/_site/latest.json
+      - name: Retrieve release information
+        run: ./_bin/retrieve_release.sh > ./docs/_site/release.json
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           API: https://api.github.com/repos/opiopan/DigViewer/releases
