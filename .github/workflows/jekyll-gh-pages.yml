@@ -30,7 +30,6 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - run: mkdir ./docs/_site
-      - run: ls -l ./docs
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
@@ -40,7 +39,7 @@ jobs:
         run: ./docs/_bin/retrieve_release.sh
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          OUTPUT_FILE: ./docs/_site/release.json
+          OUTPUT_FILE: ./docs/_site/release.xml
       - name: Upload artifact
         uses: actions/Upload-Pages-Artifact@v2
         with:
