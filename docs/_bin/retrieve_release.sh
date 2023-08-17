@@ -1,5 +1,6 @@
 #!/bin/sh
 ls -ld `dirname ${OUTPUT_FILE}`
+python3 --version
 curl -L \
     -H "Accept: application/vnd.github+json" \
     -H "Authorization: Bearer ${GITHUB_TOKEN}" \
