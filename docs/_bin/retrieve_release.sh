@@ -6,6 +6,6 @@ curl -L \
     https://api.github.com/repos/opiopan/DigViewer/releases |\
 python3 -c "
 import json, sys, re
-data = json.load(sys.stdin, encoding='utf-8')
+data = json.load(sys.stdin)
 print('<latest>%s</latest>'%(re.sub('^[vV]', '', data[0]['name'])))
 " > "${OUTPUT_FILE}"
