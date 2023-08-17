@@ -38,8 +38,8 @@ jobs:
         run: ./_bin/retrieve_release.sh
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          OUTPUT_FILE: ./docs/_site/release.json
-        working-directory: ./docs/
+          OUTPUT_FILE: release.json
+        working-directory: ./docs/_site
       - name: Upload artifact
         uses: actions/Upload-Pages-Artifact@v2
         with:
