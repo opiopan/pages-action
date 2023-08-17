@@ -1,4 +1,5 @@
 #!/bin/sh
+ls -ld `dirname ${OUTPUT_FILE}`
 curl -L \
     -H "Accept: application/vnd.github+json" \
     -H "Authorization: Bearer ${GITHUB_TOKEN}" \
