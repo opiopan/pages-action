@@ -35,7 +35,7 @@ jobs:
           source: ./docs/
           destination: ./docs/_site
       - name: Retrieve release information
-        run: ./_bin/retrieve_release.sh
+        run: ./docs/_bin/retrieve_release.sh
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           OUTPUT_FILE: ./docs/_site/release.json
