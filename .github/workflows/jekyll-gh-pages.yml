@@ -1,11 +1,12 @@
 name: Deploy Jekyll with GitHub Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
     branches: ["main"]
 
-  # Allows you to run this workflow manually from the Actions tab
+  release:
+    types: [published]
+
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -39,7 +40,7 @@ jobs:
         run: ./docs/_bin/retrieve_release.sh
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-          OUTPUT_FILE: ./docs/_site/release.xml
+          OUTPUT_FILE: ./docs/_site/release.json
       - name: Upload artifact
         uses: actions/Upload-Pages-Artifact@v2
         with:

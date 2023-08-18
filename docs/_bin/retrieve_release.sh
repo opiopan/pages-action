@@ -7,5 +7,7 @@ curl -L \
 python3 -c "
 import json, sys, re
 data = json.load(sys.stdin)
-print('<latest>%s</latest>'%(re.sub('^[vV]', '', data[0]['name'])))
+version = re.sub('^[vV]', '', data[0]['name'])
+url = [a for a in filter(lambda asset: re.search('\.[dD][mM][gG]\$', asset['name']), data[0]['assets'])][0]['browser_download_url']
+print('{\"version\":\"%s\", \"url\":\"%s\"}'%(version, url))
 " > "${OUTPUT_FILE}"
