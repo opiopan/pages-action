@@ -1,0 +1,12 @@
+name: Generate pages contents on publishing release
+
+on:
+  release:
+    types: [published]
+
+  workflow_dispatch:
+
+jobs:
+  call-workflow-generate-pages:
+    uses: ./.github/workflows/jekyll-gh-pages.yml@main
+
