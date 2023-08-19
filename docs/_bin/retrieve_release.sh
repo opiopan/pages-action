@@ -9,6 +9,6 @@ import json, sys, re
 release = [rel for rel in filter(lambda rel: rel['published_at'] and not rel['prerelease'], json.load(sys.stdin))][0]
 version = re.sub('^[vV]', '', release['name'])
 url = [asset for asset in filter(lambda asset: re.search('\.[dD][mM][gG]\$', asset['name']), release['assets'])][0]['browser_download_url']
-print('version: %s'%(version, file=sys.stderr))
+print('version: %s'%(version), file=sys.stderr)
 print('{\"version\":\"%s\", \"url\":\"%s\"}'%(version, url))
 " > "${OUTPUT_FILE}"
