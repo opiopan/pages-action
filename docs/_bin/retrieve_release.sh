@@ -11,4 +11,4 @@ print(release)
 version = re.sub('^[vV]', '', release['name'])
 url = [asset for asset in filter(lambda asset: re.search('\.[dD][mM][gG]\$', asset['name']), release['assets'])][0]['browser_download_url']
 print('{\"version\":\"%s\", \"url\":\"%s\"}'%(version, url))
-" > "${OUTPUT_FILE}"
+" #> "${OUTPUT_FILE}"
